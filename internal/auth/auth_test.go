@@ -23,7 +23,7 @@ func Test_GetAPIKey(t *testing.T) {
 	tests := []test{
 		{inputAPIKey: "", outputString: "", outputErr: ErrNoAuthHeaderIncluded},
 		{inputAPIKey: "ApiKey", outputString: "", outputErr: ErrMalformedAuthorization},
-		{inputAPIKey: "ApiKey 1", outputString: "", outputErr: nil},
+		{inputAPIKey: "ApiKey 1", outputString: "1", outputErr: nil},
 		{inputAPIKey: "Apikey 1", outputString: "", outputErr: ErrMalformedAuthorization},
 		{inputAPIKey: "ApiKey aeujgnhsapodgnpowakrng", outputString: "aeujgnhsapodgnpowakrng", outputErr: nil},
 		{inputAPIKey: "ApiKey aeujgnhs apodgnpowakrng", outputString: "aeujgnhs", outputErr: nil},
