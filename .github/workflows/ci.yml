@@ -26,6 +26,12 @@ jobs:
         env:
           GOCACHE: ${{ github.workspace }}
 
+      - name: check for vulnerabilities
+        run: 
+          gosec ./...
+        env:
+          GOCACHE: ${{ github.workspace }}
+
   style:
     name: Style
     runs-on: ubuntu-latest
