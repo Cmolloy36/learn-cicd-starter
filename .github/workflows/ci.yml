@@ -34,6 +34,6 @@ jobs:
 
       - name: lint code
         run: 
-          pwd
-          echo ${GOPATH}
+          # pwd
+          # echo ${GOPATH}
           staticcheck ./...
