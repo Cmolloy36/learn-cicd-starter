@@ -32,12 +32,10 @@ jobs:
       - name: install staticcheck
         run: go install honnef.co/go/tools/cmd/staticcheck@latest
         env:
-          GOPATH: /home/cmolloy36/go
+          GOCACHE: ${{ github.workspace }}
 
       - name: lint code
         run: 
-          # pwd
-          # echo ${GOPATH}
           staticcheck ./...
         env:
-          GOPATH: /home/cmolloy36/go
+          GOCACHE: ${{ github.workspace }}
