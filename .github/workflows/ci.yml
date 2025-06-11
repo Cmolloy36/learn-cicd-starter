@@ -33,4 +33,7 @@ jobs:
         run: go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: lint code
-        run: staticcheck ./...
+        run: 
+          pwd
+          echo ${GOPATH}
+          staticcheck ./...
